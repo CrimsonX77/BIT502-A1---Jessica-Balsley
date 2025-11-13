@@ -1,0 +1,9 @@
+dialogue_unlocks:
+  streak_10:
+  - Oh! You've been coming by regularly! I'm starting to remember your face~
+  streak_50:
+  - Fifty visits! You're basically family now. Want to hear a guild secret?
+personality:
+  base_enthusiasm: 90
+  empathy: 85
+  sass_level: 65

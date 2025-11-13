@@ -1,0 +1,199 @@
+# ============================================
+# Aurora Archive - Git Ignore Configuration
+# ============================================
+
+# ===== SECURITY & SECRETS =====
+# CRITICAL: Never commit these!
+.env
+.env.local
+.env.production
+.env.*.local
+sd_config.env
+config/api_config.enc
+config/.key
+*.pem
+*.key
+
+# API Keys (double-check these never slip through!)
+**/api_keys.json
+**/secrets.json
+
+# ===== VIRTUAL ENVIRONMENT =====
+venv/
+env/
+ENV/
+.venv
+virtualenv/
+
+# ===== PYTHON BYTECODE =====
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# ===== JUPYTER NOTEBOOKS =====
+.ipynb_checkpoints
+*.ipynb
+
+# ===== IDE & EDITORS =====
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.pydevproject
+.settings/
+
+# ===== DATABASES =====
+*.db
+*.sqlite
+*.sqlite3
+*.db-journal
+database/
+data/
+*.sql
+
+# ===== GENERATED IMAGES & OUTPUT =====
+# Don't commit generated cards (too large)
+generated_cards/
+output/
+exports/
+temp_images/
+cards/*.png
+cards/*.jpg
+
+# But keep the directories with .gitkeep
+!cards/.gitkeep
+!output/.gitkeep
+
+# ===== LOGS =====
+*.log
+logs/
+*.log.*
+log_*.txt
+
+# ===== OS FILES =====
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# ===== STABLE DIFFUSION MODELS =====
+# CRITICAL: Models are huge, don't commit them!
+*.safetensors
+*.ckpt
+*.pt
+*.pth
+models/
+SD15/
+embeddings/
+loras/
+hypernetworks/
+
+# ===== TEMPORARY & CACHE =====
+tmp/
+temp/
+cache/
+*.tmp
+*.cache
+.pytest_cache/
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# ===== CSV & DATA EXPORTS =====
+# Optional: Exclude generated CSVs
+# aurora_cards_*.csv
+# aurora_users_*.csv
+exports/*.csv
+
+# ===== NODE/NPM (if you add frontend later) =====
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+
+# ===== DOCUMENTATION DRAFTS =====
+# Keep final docs, exclude drafts
+DRAFT_*.md
+TODO_*.md
+NOTES_*.md
+
+# ===== MARKDOWN FILES WITH KEYS/PATHS =====
+# CRITICAL: These contain real API keys or personal paths
+markdowns/GROK_INTEGRATION_COMPLETE.md
+markdowns/INTEGRATION_COMPLETE.md
+markdowns/BORDER_ENHANCEMENT_README.md
+markdowns/BORDER_ENHANCEMENT_SUMMARY.md
+markdowns/CARD_GENERATION_README.md
+markdowns/MEMBER_REGISTRATION_GUIDE.md
+markdowns/MEMBER_REGISTRATION_GUIDE2.md
+markdowns/OBELISK_LAYER.md
+markdowns/PYQT6_MIGRATION.md
+markdowns/QUICK_REFERENCE.md
+markdowns/SIMPLIFIED_APP.md
+markdowns/STRIPPED_CARD_GENERATOR.md
+markdowns/USAGE_GUIDE.md
+refinedinspo/api.md
+refinedinspo/member_schema.json
+
+# Exclude sample/test files with personal paths
+archive_sanctum.py
+card_scanner.py
+
+# ===== TESTING =====
+.coverage
+.coverage.*
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+htmlcov/
+
+# ===== BACKUP FILES =====
+*.bak
+*.backup
+*.old
+*~
+
+# ===== COMPRESSION =====
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
+# ===== VIDEO FILES (if generated) =====
+# Exclude uploaded videos (can be large)
+videos/
+*.mp4
+*.avi
+*.mov
+*.mkv
+
+# But keep example/demo video if you want
+!examples/*.mp4
