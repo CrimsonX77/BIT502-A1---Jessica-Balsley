@@ -1,3 +1,0 @@
-_card_format,_first_scan,_last_scan,_scan_count,_user_id,card_id,created,database_pointer,email,member_id,name,subscription.next_billing,subscription.status,tier
-unknown,2025-11-13T06:48:05.738309,2025-11-13T06:48:05.738329,1,688a688abdfc,aurora_001_crimson,2025-11-07T19:32:00Z,members.jsonl:line_47,crimson@example.com,m_1847392,Crimson,2025-12-07,active,Premium
-aurora_member,2025-11-13T06:50:18.397518,2025-11-13T07:31:17.085810,5,m_1847392,aurora_001_crimson,2025-11-07T19:32:00Z,members.jsonl:line_47,crimson@example.com,m_1847392,Crimson,2025-12-07,active,Premium
