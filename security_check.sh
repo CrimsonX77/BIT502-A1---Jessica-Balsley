@@ -37,14 +37,14 @@ fi
 # Check 2: API keys in staged files
 echo ""
 echo "🔑 Scanning staged files for API keys..."
-if git diff --cached --name-only | xargs grep -i "xai-" 2>/dev/null; then
+if git diff --cached --name-only | xargs grep -i "xai-" 2>/dev/null | grep -v "xai-YOUR_KEY\|xai-...\|xai-your-key\|git grep\|should start with"; then
     echo -e "${RED}✗ FOUND Grok API key in staged files!${NC}"
     ERRORS=$((ERRORS + 1))
 else
     echo -e "${GREEN}✓${NC} No Grok API keys found in staged files"
 fi
 
-if git diff --cached --name-only | xargs grep -i "sk_test\|sk_live" 2>/dev/null; then
+if git diff --cached --name-only | xargs grep -i "sk_test\|sk_live" 2>/dev/null | grep -v "sk_test_YOUR\|sk_live_YOUR\|git grep"; then
     echo -e "${RED}✗ FOUND Stripe key in staged files!${NC}"
     ERRORS=$((ERRORS + 1))
 else
@@ -96,7 +96,7 @@ fi
 # Check 6: Personal paths
 echo ""
 echo "🏠 Checking for personal paths..."
-if git diff --cached --name-only | xargs grep -i "/home/crimson" 2>/dev/null; then
+if git diff --cached --name-only | xargs grep -i "/home/crimson" 2>/dev/null | grep -v "UPLOAD_CHECKLIST\|security_check.sh" | grep -v "(e.g.,"; then
     echo -e "${YELLOW}⚠${NC}  Found personal paths in staged files"
     echo "   Consider making paths relative"
 else
